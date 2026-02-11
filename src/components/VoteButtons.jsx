@@ -10,12 +10,18 @@ import {
 } from "react-icons/tb";
 import { FaSpinner } from "react-icons/fa";
 
-export function VoteButtons({ upvote, downvote, votes, existingVote }) {
+export function VoteButtons({
+  upvote,
+  downvote,
+  votes,
+  existingVote,
+  isLoggedIn,
+}) {
   const { pending, data, method, action } = useFormStatus();
 
   return (
     <>
-      <button formAction={upvote}>
+      <button formAction={upvote} disabled={!isLoggedIn}>
         {existingVote?.vote === 1 ? (
           <TbArrowBigUpFilled
             size={24}
@@ -41,7 +47,7 @@ export function VoteButtons({ upvote, downvote, votes, existingVote }) {
           votes
         )}
       </span>
-      <button formAction={downvote}>
+      <button formAction={downvote} disabled={!isLoggedIn}>
         {existingVote?.vote === -1 ? (
           <TbArrowBigDownFilled
             size={24}
@@ -58,6 +64,13 @@ export function VoteButtons({ upvote, downvote, votes, existingVote }) {
           />
         )}
       </button>
+      <div>
+        {!isLoggedIn && (
+          <p className="mt-1 text-sm text-red-500">
+            Cannot vote without being logged in
+          </p>
+        )}
+      </div>
     </>
   );
 }

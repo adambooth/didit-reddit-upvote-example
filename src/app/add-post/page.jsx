@@ -3,7 +3,6 @@ import { db } from "@/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { LoginButton } from "@/components/LoginButton";
-import { LogoutButton } from "@/components/LogoutButton";
 
 export default async function Home() {
   const session = await auth();
@@ -19,7 +18,7 @@ export default async function Home() {
 
     await db.query(
       "INSERT INTO posts (title, body, user_id) VALUES ($1, $2, $3)",
-      [title, content, userId]
+      [title, content, userId],
     );
 
     revalidatePath("/");
