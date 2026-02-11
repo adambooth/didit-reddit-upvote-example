@@ -22,7 +22,7 @@ export function CommentForm({ postId, parentCommentId }) {
 
   return (
     <div className="ml-4">
-      <button onClick={() => setOpen(!isOpen)} className="text-zinc-400">
+      <button onClick={() => setOpen(!isOpen)}>
         {isOpen ? "Close" : "Reply"}
       </button>
       {isOpen ? (

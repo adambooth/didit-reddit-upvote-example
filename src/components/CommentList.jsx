@@ -16,7 +16,7 @@ export async function CommentList({ postId, parentCommentId = null }) {
   return (
     <ul className="ml-4">
       {comments.rows.map((comment) => (
-        <li key={comment.id} className="pt-2">
+        <li key={comment.id} className="comment-container pt-2">
           <div className="flex space-x-3 items-center pb-2">
             <img
               src={comment.image}
@@ -25,7 +25,7 @@ export async function CommentList({ postId, parentCommentId = null }) {
               height={32}
               className="rounded-full"
             />
-            <span className="font-bold text-zinc-400">{comment.name}</span>
+            <span className="font-bold">{comment.name}</span>
           </div>
           <div className="ml-4 border-l border-zinc-300 pl-2 flex flex-col space-y-1">
             <span className="pl-4">{comment.body}</span>

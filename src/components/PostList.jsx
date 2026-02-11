@@ -20,10 +20,7 @@ export async function PostList({ currentPage = 1 }) {
     <>
       <ul className="max-w-screen-lg mx-auto p-4 mb-4">
         {posts.map((post) => (
-          <li
-            key={post.id}
-            className=" py-4 flex space-x-6 hover:bg-zinc-200 rounded-lg"
-          >
+          <li key={post.id} className="post-container py-4 flex space-x-6">
             <Vote postId={post.id} votes={post.vote_total} />
             <div>
               <Link
@@ -32,11 +29,12 @@ export async function PostList({ currentPage = 1 }) {
               >
                 {post.title}
               </Link>
-              <p className="text-zinc-700">posted by {post.name}</p>
+              <p>posted by {post.name}</p>
             </div>
           </li>
         ))}
       </ul>
+
       <Pagination currentPage={currentPage} />
     </>
   );

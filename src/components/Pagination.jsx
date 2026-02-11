@@ -14,7 +14,7 @@ export async function Pagination({ currentPage = 1 }) {
         <li>
           <a
             href={currentPage - 1 === 1 ? `/` : `/page/${currentPage - 1}`}
-            className="p-2 hover:bg-zinc-800 block text-zinc-400"
+            className="p-2 hover:bg-zinc-800 block"
           >
             <GrFormPrevious />
           </a>

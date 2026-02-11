@@ -10,7 +10,7 @@ export async function UserInfo() {
       {session ? (
         <div>
           {session.user.name}{" "}
-          <span className="text-xs text-zinc-400 mr-3">#{session.user.id}</span>
+          <span className="text-xs mr-3">#{session.user.id}</span>
           <LogoutButton />
         </div>
       ) : (

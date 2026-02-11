@@ -52,14 +52,16 @@ export async function Vote({ postId, votes }) {
   }
 
   return (
-    <form className="flex items-center space-x-3 pl-3">
-      <VoteButtons
-        upvote={upvote}
-        downvote={downvote}
-        votes={votes}
-        existingVote={existingVote}
-        isLoggedIn={isLoggedIn}
-      />
-    </form>
+    <div className="vote-container">
+      <form className="flex items-center space-x-3 pl-3">
+        <VoteButtons
+          upvote={upvote}
+          downvote={downvote}
+          votes={votes}
+          existingVote={existingVote}
+          isLoggedIn={isLoggedIn}
+        />
+      </form>
+    </div>
   );
 }
