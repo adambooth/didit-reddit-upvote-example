@@ -30,6 +30,13 @@ The project is a work in progress and is not yet complete.
 5. Run `npm run dev` to start the development server
 6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the site
 
+## Creating AUTH_SECRET
+
+1. Open Bash Terminal
+2. Generate a Random Secret by running openssl rand -base64 32
+3. This will output a 32-character base64 string. Example: sN3k9vL1bX8cM7dYQp2rZ4tH5wA6jF0u
+4. AUTH_SECRET="your_generated_secret_here"
+
 ## Potential future features
 
 - [ ] User profiles
